@@ -1,3 +1,9 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [Form1.cs](./CS/GridControlSummuryItem/Form1.cs) (VB: [Form1.vb](./VB/GridControlSummuryItem/Form1.vb))
+* [Program.cs](./CS/GridControlSummuryItem/Program.cs) (VB: [Program.vb](./VB/GridControlSummuryItem/Program.vb))
+<!-- default file list end -->
 # How to add Tooltips for a GridColumns SummaryItem
 
 
