@@ -1,6 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
-Namespace GridControlSummuryItem
+﻿Namespace GridControlSummuryItem
 	Partial Public Class Form1
 		''' <summary>
 		''' Required designer variable.
@@ -28,9 +26,6 @@ Namespace GridControlSummuryItem
 			Me.components = New System.ComponentModel.Container()
 			Me.gridControl1 = New DevExpress.XtraGrid.GridControl()
 			Me.gridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
-			Me.nwindDataSet = New GridControlSummuryItem.nwindDataSet()
-			Me.customersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-			Me.customersTableAdapter = New GridControlSummuryItem.nwindDataSetTableAdapters.CustomersTableAdapter()
 			Me.colCustomerID = New DevExpress.XtraGrid.Columns.GridColumn()
 			Me.colCompanyName = New DevExpress.XtraGrid.Columns.GridColumn()
 			Me.colContactName = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -45,13 +40,10 @@ Namespace GridControlSummuryItem
 			Me.toolTipController1 = New DevExpress.Utils.ToolTipController(Me.components)
 			CType(Me.gridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
 			CType(Me.gridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-			CType(Me.nwindDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-			CType(Me.customersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
 			Me.SuspendLayout()
 			' 
 			' gridControl1
 			' 
-			Me.gridControl1.DataSource = Me.customersBindingSource
 			Me.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill
 			Me.gridControl1.Location = New System.Drawing.Point(0, 0)
 			Me.gridControl1.MainView = Me.gridView1
@@ -68,25 +60,11 @@ Namespace GridControlSummuryItem
 			Me.gridView1.Name = "gridView1"
 			Me.gridView1.OptionsView.ShowFooter = True
 			' 
-			' nwindDataSet
-			' 
-			Me.nwindDataSet.DataSetName = "nwindDataSet"
-			Me.nwindDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-			' 
-			' customersBindingSource
-			' 
-			Me.customersBindingSource.DataMember = "Customers"
-			Me.customersBindingSource.DataSource = Me.nwindDataSet
-			' 
-			' customersTableAdapter
-			' 
-			Me.customersTableAdapter.ClearBeforeFill = True
-			' 
 			' colCustomerID
 			' 
 			Me.colCustomerID.FieldName = "CustomerID"
 			Me.colCustomerID.Name = "colCustomerID"
-			Me.colCustomerID.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count
+			Me.colCustomerID.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() { New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count)})
 			Me.colCustomerID.Visible = True
 			Me.colCustomerID.VisibleIndex = 0
 			' 
@@ -162,7 +140,8 @@ Namespace GridControlSummuryItem
 			' 
 			' toolTipController1
 			' 
-'			Me.toolTipController1.GetActiveObjectInfo += New DevExpress.Utils.ToolTipControllerGetActiveObjectInfoEventHandler(Me.toolTipController1_GetActiveObjectInfo);
+'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
+'ORIGINAL LINE: this.toolTipController1.GetActiveObjectInfo += new DevExpress.Utils.ToolTipControllerGetActiveObjectInfoEventHandler(this.toolTipController1_GetActiveObjectInfo);
 			' 
 			' Form1
 			' 
@@ -172,11 +151,10 @@ Namespace GridControlSummuryItem
 			Me.Controls.Add(Me.gridControl1)
 			Me.Name = "Form1"
 			Me.Text = "Form1"
-'			Me.Load += New System.EventHandler(Me.Form1_Load);
+'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
+'ORIGINAL LINE: this.Load += new System.EventHandler(this.Form1_Load);
 			CType(Me.gridControl1, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(Me.gridView1, System.ComponentModel.ISupportInitialize).EndInit()
-			CType(Me.nwindDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-			CType(Me.customersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
 			Me.ResumeLayout(False)
 
 		End Sub
@@ -185,9 +163,6 @@ Namespace GridControlSummuryItem
 
 		Private gridControl1 As DevExpress.XtraGrid.GridControl
 		Private gridView1 As DevExpress.XtraGrid.Views.Grid.GridView
-		Private nwindDataSet As nwindDataSet
-		Private customersBindingSource As System.Windows.Forms.BindingSource
-		Private customersTableAdapter As GridControlSummuryItem.nwindDataSetTableAdapters.CustomersTableAdapter
 		Private colCustomerID As DevExpress.XtraGrid.Columns.GridColumn
 		Private colCompanyName As DevExpress.XtraGrid.Columns.GridColumn
 		Private colContactName As DevExpress.XtraGrid.Columns.GridColumn
